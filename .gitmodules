@@ -1,0 +1,6 @@
+[submodule "IOH-Profiler-HDBO-Comparison"]
+	path = IOH-Profiler-HDBO-Comparison
+	url = https://github.com/BayesOptApp/IOH-Profiler-HDBO-Comparison.git
+[submodule "Practical_Problems"]
+	path = Practical_Problems
+	url = https://github.com/BayesOptApp/Practical_Problems.git
