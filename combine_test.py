@@ -9,22 +9,27 @@ import numpy as np
 
 
 dim:int = 12
-total_budget:int = 30
+total_budget:int = 250
 doe_size:int = dim
-seed:int = 2
-algorithm_name:str = "BAxUS_botorch"
+seed:int = 7
+algorithm_name:str = "BO_botorch"
 
 # Try to get the Tersoff_potentialC1
-problem_instance = get_practical_problem(1124,dim=dim)
+problem_instance = get_practical_problem(1123,dim=dim)
 
 # Set up the logger
 logger = Analyzer(
-    triggers=[ON_IMPROVEMENT, Each(3)],
+    triggers=[ALWAYS],
     additional_properties=[RAWYBEST],
     folder_name=f'./results/{algorithm_name}_{problem_instance.meta_data.name}_{dim}D',
     algorithm_name=algorithm_name,
-    algorithm_info="Santoni Implementation",
-    store_positions=False
+    algorithm_info="Santoni (et al.) Implementation",
+    store_positions=True
+)
+
+logger.add_run_attribute(
+    "seed",
+    seed,
 )
 
 # Attach the logger to the problem instance
