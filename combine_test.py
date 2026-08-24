@@ -8,14 +8,14 @@ from ioh.iohcpp.logger.trigger import ALWAYS, ON_IMPROVEMENT, Each
 import numpy as np
 
 
-dim:int = 12
+dim:int = 49
 total_budget:int = 250
 doe_size:int = dim
-seed:int = 7
+seed:int = 8
 algorithm_name:str = "BO_botorch"
 
 # Try to get the Tersoff_potentialC1
-problem_instance = get_practical_problem(1123,dim=dim)
+problem_instance = get_practical_problem(1121,dim=dim)
 
 # Set up the logger
 logger = Analyzer(
