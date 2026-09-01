@@ -12,10 +12,20 @@ dim:int = 24
 total_budget:int = 250
 doe_size:int = dim
 seed:int = 1001
-algorithm_name:str = "BO_botorch"
+algorithm_name:str = "BO_botorch" # Select from [BO_botorch, HEBO, BAxUS, turbo1, turbom]
 
-# Try to get the Tersoff_potentialC1
-problem_instance = get_practical_problem(1125,dim=dim)
+# For using the practical problem suite, we need to get the problem instance first
+# Problem selection:
+# 1121 -> Bench_EPS
+# 1122 -> Bench_Pitz-Daily
+# 1123 -> Circular_antenna_array
+# 1124 -> Frequency_modulated_sound_waves
+# 1125 -> Lennard_Jones_Potential
+# 1126 -> Spacecraft_trajectory_optimizationC1
+# 1127 -> Spacecraft_trajectory_optimizationC2
+# 1128 -> Spread_spectrum_radar
+# 1129 -> Tersoff_potentialC1
+# 1130 -> Windwake
 
 # Set up the logger
 logger = Analyzer(
