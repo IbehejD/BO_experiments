@@ -13,7 +13,7 @@ dim:int = 10
 total_budget:int = 250
 doe_size:int = dim
 seed:int = 8
-algorithm_name:str = "BO_botorch"
+algorithm_name:str = "HEBO"
 
 # Try to get the Tersoff_potentialC1
 problem_instance = get_practical_problem(1122,dim=dim)
